@@ -1,0 +1,13 @@
+syntax = "proto3";
+option java_package = "com.example.protobuf";
+option java_multiple_files = true;
+
+message ErrorResponse {
+    repeated Detail details = 1;
+}
+
+message Detail {
+    string key = 1;
+    repeated string args = 2;
+    string defaultMessage = 3;
+}

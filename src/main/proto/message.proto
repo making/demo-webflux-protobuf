@@ -1,0 +1,11 @@
+syntax = "proto3";
+option java_package = "com.example.protobuf";
+option java_multiple_files = true;
+
+message Message {
+    string text = 1;
+}
+
+message Messages {
+    repeated Message value = 1;
+}
