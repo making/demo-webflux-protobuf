@@ -17,8 +17,7 @@ import static org.springframework.web.reactive.function.server.ServerResponse.ok
 
 public class MessageHandler {
     private final List<Message> messages = new CopyOnWriteArrayList<>();
-
-    static Validator<Message> validator = Validator.builder(Message.class)
+    private static Validator<Message> validator = Validator.builder(Message.class)
             .constraint(Message::getText, "text", c -> c.notBlank().lessThanOrEqual(8))
             .build();
 
